@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 343.39 103.3">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-3 {
+        font-family: Outfit-Medium, Outfit;
+        font-size: 30.56px;
+        font-variation-settings: 'wght' 500;
+        font-weight: 500;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fcc10a;
+      }
+
+      .cls-5 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-6 {
+        fill: #fff;
+        font-family: BebasNeue-Bold, 'Bebas Neue';
+        font-size: 72.79px;
+        font-weight: 700;
+      }
+
+      .cls-7 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        letter-spacing: -.02em;
+      }
+    </style>
+  </defs>
+  <g id="Capa_1-2" data-name="Capa 1">
+    <g>
+      <circle class="cls-4" cx="51.69" cy="27.18" r="11.86"/>
+      <circle class="cls-4" cx="75.39" cy="62.61" r="8.15"/>
+      <circle class="cls-4" cx="28.12" cy="62.61" r="8.15"/>
+      <path class="cls-4" d="M41.19,82.82v4.69H14.48c-.15-.15-.28-.29-.42-.44v-4.25c0-1.02.18-2,.51-2.91,1.19-3.33,4.37-5.71,8.11-5.71h9.9c4.76,0,8.62,3.86,8.62,8.62Z"/>
+      <path class="cls-4" d="M88.82,87.51h-26.99v-4.69c0-4.76,3.86-8.62,8.62-8.62h9.9c3.83,0,7.08,2.5,8.19,5.96.28.84.42,1.73.42,2.66v4.55l-.14.15Z"/>
+      <path class="cls-4" d="M65.05,58.26l5.58-6.23c-.67-5.57-5.41-9.9-11.17-9.9h-1.57c-1.91.79-4,1.23-6.2,1.23s-4.29-.44-6.2-1.23h-2.26c-5.65,0-10.33,4.17-11.13,9.6l5.6,6.14c3.07-2.8,7.02-4.66,11.39-5.11v12.36l-9.07,6.96,2.82,3.68,8.99-6.89,8.99,6.89,2.82-3.68-9.92-7.6v-11.65c4.37.56,8.31,2.52,11.32,5.44Z"/>
+      <path class="cls-4" d="M51.65,0C23.12,0,0,23.12,0,51.65c0,13.71,5.34,26.18,14.06,35.42.14.15.27.29.42.44,9.39,9.73,22.57,15.79,37.17,15.79s27.78-6.06,37.17-15.79c.05-.05.1-.1.14-.15,8.89-9.27,14.34-21.86,14.34-35.71C103.3,23.12,80.18,0,51.65,0ZM51.65,98.27c-11.32,0-21.72-4.04-29.79-10.76-2.7-2.25-5.15-4.8-7.29-7.6-5.98-7.84-9.54-17.63-9.54-28.26C5.03,25.91,25.9,5.03,51.65,5.03s46.62,20.88,46.62,46.62c0,10.74-3.63,20.62-9.73,28.5-2.09,2.7-4.47,5.17-7.1,7.35-8.08,6.72-18.47,10.76-29.79,10.76Z"/>
+    </g>
+    <g>
+      <text class="cls-6" transform="translate(115.26 61.87) scale(1.27 1)"><tspan x="0" y="0">CSE 340</tspan></text>
+      <text class="cls-3" transform="translate(114.44 95.42) scale(1.03 1)"><tspan class="cls-8" x="0" y="0">S</tspan><tspan x="16.81" y="0">e</tspan><tspan class="cls-9" x="33.12" y="0">r</tspan><tspan x="45.38" y="0">vi</tspan><tspan class="cls-1" x="68.11" y="0">c</tspan><tspan x="82.68" y="0">e N</tspan><tspan class="cls-5" x="127.02" y="0">e</tspan><tspan x="142.97" y="0">t</tspan><tspan class="cls-7" x="154.52" y="0">w</tspan><tspan x="177.19" y="0">o</tspan><tspan class="cls-2" x="194.39" y="0">r</tspan><tspan x="206.83" y="0">k</tspan></text>
+    </g>
+  </g>
+</svg>
