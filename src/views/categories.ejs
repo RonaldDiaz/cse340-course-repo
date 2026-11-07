@@ -4,11 +4,17 @@
             <%= title %>
         </h1>
         <p>You can offer your help to assist in any of these categories:</p>
-        <ul>
-            <li>Environmental</li>
-            <li>Educational</li>
-            <li>Community Service</li>
-            <li>Health and Wellness</li>
-        </ul>
+        <div class="categories-grid">
+            <% categories.forEach(category=> { %>
+                <div class="category-card"
+                    style="background-image: url('/images/category-<%=category.category_id%>.jpg');">
+                    <div class="category-overlay">
+                        <h2>
+                            <%= category.name %>
+                        </h2>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
     </main>
     <%- include('partials/footer') %>
