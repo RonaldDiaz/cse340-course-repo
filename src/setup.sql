@@ -43,21 +43,18 @@ CREATE TABLE service_projects (
 );
 
 INSERT INTO service_projects (organization_id, title, description, location, project_date) VALUES
--- 🏢 BrightFuture Builders (organization_id: 1)
+
 (1, 'Community Park Bench Restoration', 'Building and repairing eco-friendly benches using recycled plastic materials for the local park.', 'Oakwood Community Park', '2027-02-15'),
 (1, 'Library Accessibility Ramp Construction', 'Constructing a wheelchair-accessible wooden ramp to improve mobility access at the public library.', 'Downtown Public Library', '2027-03-10'),
 (1, 'Eco-Friendly Community Center Painting', 'Applying non-toxic, sustainable paint to the exterior walls of the youth neighborhood center.', 'Eastside Youth Center', '2027-04-05'),
 (1, 'Solar Panel Installation Workshop', 'Helping install a small solar array on a community shelter roof while educating youth on green energy.', 'Hope Shelter Home', '2027-05-12'),
 (1, 'Sidewalk Safety Repairs', 'Fixing cracked pathways and installing pedestrian safety indicators near the local elementary school.', 'West Maple School Zone', '2027-06-20'),
 
--- 🚜 GreenHarvest Growers (organization_id: 2)
 (2, 'Spring Seed Planting Day', 'Preparing the soil and planting organic vegetable seeds for the upcoming community spring harvest.', 'North End Urban Farm', '2027-03-22'),
 (2, 'Rainwater Harvesting System Setup', 'Assembling and installing water collection barrels to establish a sustainable irrigation loop.', 'Community Rooftop Garden', '2027-04-18'),
 (2, 'Composting and Soil Science Class', 'Teaching local families how to turn kitchen waste into nutrient-rich soil and setting up compost bins.', 'GreenHarvest Training Hub', '2027-05-02'),
 (2, 'School Garden Bed Construction', 'Building raised wooden garden beds to help elementary students learn about urban farming.', 'Riverdale Primary School', '2027-05-28'),
-(2, 'Pollinator Friendly Flower Planting', 'Planting native wild flowers to support local bee populations and improve crop pollination.', 'Sunnyvale Botanical Plot', '2027-06-14'), -- <-- Aquí faltaba la coma
-
-
+(2, 'Pollinator Friendly Flower Planting', 'Planting native wild flowers to support local bee populations and improve crop pollination.', 'Sunnyvale Botanical Plot', '2027-06-14'),
 (3, 'Senior Center Companion and Tech Day', 'Spending the afternoon reading with seniors and helping them set up video calls to connect with family.', 'Silver Linings Retirement Home', '2027-02-20'),
 (3, 'Community Food Pantry Sorting', 'Organizing non-perishable food donations and packing grocery bags for low-income families.', 'UnityServe Logistics Warehouse', '2027-03-05'),
 (3, 'After-School Homework Tutoring', 'Providing academic support in math and English to middle school students from underserved areas.', 'Beacon Neighborhood Hub', '2027-03-15'),
@@ -96,29 +93,22 @@ CREATE TABLE project_categories (
 );
 
 INSERT INTO project_categories (project_id, category_id) VALUES
--- 🏢 Proyectos de BrightFuture Builders (IDs 1 al 5) -> Categoría 1 (Infrastructure)
 (1, 1),
 (2, 1),
 (3, 1),
-(4, 1), -- También califica en sustentabilidad
+(4, 1),
 (5, 1),
-
--- 🚜 Proyectos de GreenHarvest Growers (IDs 6 al 10) -> Categoría 2 (Urban Farming)
 (6, 2),
 (7, 2),
 (8, 2),
-(9, 2), -- También califica en educación
+(9, 2),
 (10, 2),
-
-
 (11, 4),
 (12, 4),
 (13, 3),
 (14, 4),
 (15, 4),
-
--- Relaciones Many-to-Many adicionales (Proyectos que pertenecen a más de una categoría)
-(4, 2),  -- Solar Panel Installation está en Infraestructura (1) y Sustentabilidad (2)
-(9, 3);  -- School Garden Bed está en Agricultura (2) y Educación (3)
+(4, 2),
+(9, 3);
 
 SELECT * FROM project_categories;
