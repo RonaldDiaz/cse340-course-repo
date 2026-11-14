@@ -10,24 +10,22 @@
                 <div class="project-card">
                     <div class="project-card-header">
                         <h3>
-                            <%= project.title %>
+                            <a href="/project/<%= project.project_id %>" class="project-link">
+                                <%= project.title %>
+                            </a>
                         </h3>
-                        <span class="org-badge">
+                        <a href="/organization/<%= project.organization_id %>" class="org-badge">
                             <%= project.organization_name %>
-                        </span>
+                        </a>
                     </div>
+
                     <div class="project-card-body">
-                        <p class="description">
-                            <%= project.description %>
-                        </p>
-                    </div>
-                    <div class="project-card-footer">
                         <p><strong>Location:</strong>
                             <%= project.location %>
                         </p>
                         <p><strong>Date:</strong>
-                            <%= project.project_date.toLocaleDateString('en-US', { 
-                                weekday: 'short' , year: 'numeric' , month: 'short' , day: 'numeric' }) %>
+                            <%= project.project_date.toLocaleDateString('en-US', { weekday: 'short' , year: 'numeric' ,
+                                month: 'short' , day: 'numeric' }) %>
                         </p>
                     </div>
                 </div>
@@ -35,4 +33,5 @@
         </div>
     </main>
     <%- include('partials/footer') %>
+
 

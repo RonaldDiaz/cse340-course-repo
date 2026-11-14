@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+<main class="project-detail-container">
+    <% if (projectDetails) { %>
+        <div class="detail-card">
+            <a href="/organization/<%=projectDetails.organization_id%>">
+                <div class="detail-card-header">
+                    <div class="org-brand">
+                        <img src="/images/<%= projectDetails.logo_filename %>" 
+                            alt="<%= projectDetails.organization_name %> logo" 
+                            class="org-logo-small">
+                        <div>
+                            <span class="sponsored-label">Sponsored by</span>
+                            <h2 class="org-name">
+                                <%= projectDetails.organization_name %>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <div class="detail-card-body">
+                <h1 class="project-title"><%= projectDetails.title %></h1>
+                <p class="project-description"><%= projectDetails.description %></p>
+
+                <div class="project-meta-grid">
+                    <div class="meta-item">
+                        <img src="/images/location-pin.svg" alt="Location icon" class="meta-icon">
+                        <div>
+                            <span class="meta-label">Location</span>
+                            <p class="meta-value"><%= projectDetails.location %></p>
+                        </div>
+                    </div>
+
+                    <div class="meta-item">
+                        <img src="/images/calendar.svg" alt="Date icon" class="meta-icon">
+                        <div>
+                            <span class="meta-label">Date</span>
+                            <p class="meta-value">
+                                <%= projectDetails.project_date.toLocaleDateString('en-US', { 
+                                    weekday: 'long', 
+                                    year: 'numeric', 
+                                    month: 'long', 
+                                    day: 'numeric' 
+                                }) %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-card-footer">
+                <button type="button" class="btn-primary">Volunteer for this Project</button>
+            </div>
+        </div>
+    <% } else { %>
+        <div class="not-found-box">
+            <h2>Project Not Found</h2>
+            <p>Sorry, we couldn't find the service project you're looking for.</p>
+            <a href="/projects" class="btn-secondary">&larr; Back to All Projects</a>
+        </div>
+    <% } %>
+</main>
+<%- include('partials/footer') %>
