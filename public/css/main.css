@@ -229,7 +229,7 @@ footer {
         padding: 0.75rem 1rem;
 
         .menu-toggle {
-            display: flex; /* Mostrar botón hamburguesa en pantallas < 768px */
+            display: flex;
         }
 
         .nav-links {
@@ -289,9 +289,27 @@ footer {
     background-color: var(--bg-body);
     border-bottom: 1px solid var(--border-color);
 
+    .org-subtitle {
+        display: inline-block;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-muted);
+        text-decoration: none;
+        margin-bottom: 0.35rem;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+    }
+
     h3 {
-        margin: 0 0 0.65rem 0;
-        font-size: 1.15rem;
+        margin: 0 0 0.85rem 0;
+        font-size: 1.2rem;
+        line-height: 1.3;
 
         .project-link {
             color: var(--primary-color);
@@ -304,23 +322,30 @@ footer {
             }
         }
     }
-}
 
-.org-badge {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: bold;
-    padding: 0.25rem 0.6rem;
-    border-radius: 9999px;
-    text-transform: uppercase;
-    transition: transform 0.2s ease, filter 0.2s ease;
+    .card-categories-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
 
-    &:hover {
-        filter: brightness(0.95);
-        transform: translateY(-1px);
+        .category-tag {
+            display: inline-block;
+            background-color: var(--bg-card);
+            color: var(--primary-light);
+            border: 1px solid var(--border-color);
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+
+            &:hover {
+                background-color: var(--primary-light);
+                color: #ffffff;
+                border-color: var(--primary-light);
+            }
+        }
     }
 }
 
@@ -360,12 +385,11 @@ footer {
 
 .categories-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Una sola columna en móviles */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 1.5rem 0;
 }
 
-/* En pantallas medianas y grandes, se muestran en 2 columnas */
 @media (min-width: 768px) {
     .categories-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -373,6 +397,8 @@ footer {
 }
 
 .category-card {
+    display: block;
+    text-decoration: none;
     height: 140px;
     background-size: cover;
     background-position: center;
@@ -390,6 +416,12 @@ footer {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
         }
     }
+}
+
+.category-actions {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
 }
 
 .category-overlay {
@@ -468,11 +500,37 @@ footer {
         padding: 2rem;
 
         .project-title {
-            margin: 0 0 1rem 0;
+            margin: 0 0 0.75rem 0;
             font-size: 2rem;
             color: var(--primary-color);
             border-bottom: none;
             padding-bottom: 0;
+        }
+
+        .project-categories-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+
+            .category-tag {
+                display: inline-block;
+                background-color: var(--bg-body);
+                color: var(--primary-light);
+                border: 1px solid var(--border-color);
+                font-size: 0.8rem;
+                font-weight: 600;
+                padding: 0.25rem 0.75rem;
+                border-radius: 9999px;
+                text-decoration: none;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    background-color: var(--primary-light);
+                    color: #ffffff;
+                    border-color: var(--primary-light);
+                }
+            }
         }
 
         .project-description {
@@ -562,5 +620,69 @@ footer {
     .not-found-box {
         text-align: center;
         padding: 2rem;
+    }
+}
+
+/* ==========================================
+   7. Organization Profile View
+   ========================================== */
+.org-profile-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.75rem;
+    background-color: var(--bg-body);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+
+    .org-profile-logo {
+        width: 96px;
+        height: 96px;
+        object-fit: contain;
+        background-color: var(--bg-card);
+        padding: 0.5rem;
+        border-radius: var(--radius);
+        border: 1px solid var(--border-color);
+        flex-shrink: 0;
+    }
+
+    .org-profile-info {
+        flex: 1;
+
+        h1 {
+            margin: 0 0 0.5rem 0;
+            border-bottom: none;
+            padding-bottom: 0;
+            font-size: 1.85rem;
+        }
+
+        .org-contact {
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+
+            a {
+                color: var(--primary-light);
+                text-decoration: none;
+                font-weight: 600;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .org-description {
+            margin: 0;
+            line-height: 1.6;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .org-profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }
