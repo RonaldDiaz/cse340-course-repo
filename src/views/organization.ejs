@@ -1,24 +1,44 @@
 <%- include('partials/header') %>
     <main>
-        <h1>
-            <%= title %>
-        </h1>
+        <% if (organization) { %>
+            <div class="org-profile-header">
+                <img src="/images/<%= organization.logo_filename %>" alt="<%= organization.name %> logo"
+                    class="org-profile-logo">
 
-        <h2>
-            <%= organizationDetails.name %>
-        </h2>
-        <img src="/images/<%= organizationDetails.logo_filename %>" alt="<%= organizationDetails.name %> logo">
+                <div class="org-profile-info">
+                    <h1>
+                        <%= organization.name %>
+                    </h1>
+                    <p class="org-contact">
+                        <strong>Contact Email:</strong>
+                        <a href="mailto:<%= organization.contact_email %>">
+                            <%= organization.contact_email %>
+                        </a>
+                    </p>
+                    <p class="org-description">
+                        <%= organization.description %>
+                    </p>
+                </div>
+            </div>
 
-        <p>Description: <%= organizationDetails.description %>
-        </p>
+            <h2>Sponsored Service Projects</h2>
+            <% if (projects && projects.length> 0) { %>
+                <div class="projects-grid">
+                    <% projects.forEach(project=> { %>
+                        <%- include('partials/project-card', { project }) %>
+                            <% }); %>
+                </div>
+                <% } else { %>
+                    <p>This organization does not have any upcoming service projects at the moment.</p>
+                    <% } %>
 
-        <h3>Service Projects</h3>
-        <ul>
-            <% projects.forEach(project=> { %>
-                <li><a href="/project/<%= project.project_id %>">
-                        <%= project.title %>
-                    </a></li>
-                <% }) %>
-        </ul>
+                        <div class="category-actions">
+                            <a href="/organizations" class="btn-secondary">&larr; Back to All Organizations</a>
+                        </div>
+                        <% } else { %>
+                            <h1>Organization Not Found</h1>
+                            <p>Sorry, the partner organization you are looking for does not exist.</p>
+                            <a href="/organizations" class="btn-secondary">&larr; Back to All Organizations</a>
+                            <% } %>
     </main>
     <%- include('partials/footer') %>

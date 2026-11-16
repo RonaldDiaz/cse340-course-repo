@@ -6,14 +6,14 @@
         <p>You can offer your help to assist in any of these categories:</p>
         <div class="categories-grid">
             <% categories.forEach(category=> { %>
-                <div class="category-card"
+                <a href="/category/<%= category.category_id %>" class="category-card"
                     style="background-image: url('/images/category-<%=category.category_id%>.jpg');">
                     <div class="category-overlay">
                         <h2>
                             <%= category.name %>
                         </h2>
                     </div>
-                </div>
+                </a>
                 <% }); %>
         </div>
     </main>

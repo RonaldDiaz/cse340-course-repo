@@ -1,0 +1,33 @@
+<div class="project-card">
+    <div class="project-card-header">
+        <a href="/organization/<%= project.organization_id %>" class="org-subtitle">
+            <%= project.organization_name %>
+        </a>
+
+        <h3>
+            <a href="/project/<%= project.project_id %>" class="project-link">
+                <%= project.title %>
+            </a>
+        </h3>
+
+        <% if (project.categories && project.categories.length> 0) { %>
+            <div class="card-categories-tags">
+                <% project.categories.forEach(cat=> { %>
+                    <a href="/category/<%= cat.category_id %>" class="category-tag">
+                        <%= cat.name %>
+                    </a>
+                    <% }); %>
+            </div>
+            <% } %>
+    </div>
+
+    <div class="project-card-body">
+        <p><strong>Location:</strong>
+            <%= project.location %>
+        </p>
+        <p><strong>Date:</strong>
+            <%= project.project_date.toLocaleDateString('en-US', { weekday: 'short' , year: 'numeric' , month: 'short' ,
+                day: 'numeric' }) %>
+        </p>
+    </div>
+</div>

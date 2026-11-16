@@ -20,6 +20,15 @@
 
             <div class="detail-card-body">
                 <h1 class="project-title"><%= projectDetails.title %></h1>
+                <% if (projectCategories && projectCategories.length> 0) { %>
+                    <div class="project-categories-tags">
+                        <% projectCategories.forEach(category=> { %>
+                            <a href="/category/<%= category.category_id %>" class="category-tag">
+                                <%= category.name %>
+                            </a>
+                        <% }); %>
+                    </div>
+                <% } %>
                 <p class="project-description"><%= projectDetails.description %></p>
 
                 <div class="project-meta-grid">
