@@ -1,13 +1,48 @@
 <%- include('partials/header') %>
-<main>
-    <h1><%= title %></h1>
+    <main>
+        <h1>
+            <%= title %>
+        </h1>
 
-    <p>Here are a few of our partner organizations:</p>
-    <ul>
-        <% organizations.forEach(organization => { %>
-            <li><img src="/images/<%= organization.logo_filename %>" alt="<%= organization.name %> logo"><a href="/organization/<%= organization.organization_id %>"><%= organization.name %></a>: <%= organization.contact_email %></li>
-        <% }); %>
-    </ul>
-</main>
+        <div class="section-header">
+            <h2>Our Partner Organizations</h2>
+            <a href="/new-organization" class="btn-primary">+ Add New Organization</a>
+        </div>
+        <p>Explore the organizations sponsoring service projects across our community network:</p>
 
-<%- include('partials/footer') %>
+        <% if (organizations && organizations.length> 0) { %>
+            <div class="organizations-grid">
+                <% organizations.forEach(org=> { %>
+                    <div class="org-card">
+                        <div class="org-card-header">
+                            <img src="/images/<%= org.logo_filename %>" alt="<%= org.name %> logo"
+                                class="org-card-logo">
+                            <h3>
+                                <a href="/organization/<%= org.organization_id %>">
+                                    <%= org.name %>
+                                </a>
+                            </h3>
+                        </div>
+
+                        <div class="org-card-body">
+                            <p class="description">
+                                <%= org.description %>
+                            </p>
+                        </div>
+
+                        <div class="org-card-footer">
+                            <a href="mailto:<%= org.contact_email %>" class="org-email">
+                                ✉️ <%= org.contact_email %>
+                            </a>
+                            <a href="/organization/<%= org.organization_id %>" class="btn-terciary">
+                                View Projects
+                            </a>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+            <% } else { %>
+                <p>No partner organizations are currently registered in the network.</p>
+                <% } %>
+    </main>
+    <%- include('partials/footer') %>

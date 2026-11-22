@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+    <main>
+        <h1>
+            <%= title %>
+        </h1>
+        <p>Fill out the details below to register a new partner organization in the network.</p>
+
+        <form action="/edit-organization/<%= organizationDetails.organization_id %>" method="POST" class="app-form">
+            <div class="form-group">
+                <label for="name">Organization Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g., Community Care Alliance" maxlength="150" required value="<%= organizationDetails.name %>"/>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="4"
+                    placeholder="Describe the organization's mission and community focus..." maxlength="500" required><%= organizationDetails.description %></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="contactEmail">Contact Email</label>
+                <input type="email" id="contactEmail" name="contactEmail" placeholder="contact@organization.org" required 
+                value=" <%= organizationDetails.contact_email %>"/>
+            </div>
+
+            <div class="form-group">
+                <label for="logoFilename">Logo Filename</label>
+                <input type="text" id="logoFilename" name="logoFilename" placeholder="logo.jpeg" minlength="5" maxlength="255" required
+                    value="<%= organizationDetails.logo_filename %> " />
+            </div>
+
+            <div class="form-actions">
+                <a href="/organizations" class="btn-secondary">Cancel</a>
+                <button type="submit" class="btn-primary">Update Organization</button>
+            </div>
+        </form>
+    </main>
+    <%- include('partials/footer') %>

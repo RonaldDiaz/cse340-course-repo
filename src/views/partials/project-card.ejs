@@ -13,7 +13,7 @@
         <% if (project.categories && project.categories.length> 0) { %>
             <div class="card-categories-tags">
                 <% project.categories.forEach(cat=> { %>
-                    <a href="/category/<%= cat.category_id %>" class="category-tag">
+                    <a href="/category/<%= cat.category_id %>" class="btn-terciary">
                         <%= cat.name %>
                     </a>
                     <% }); %>

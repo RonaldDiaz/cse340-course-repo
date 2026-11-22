@@ -3,7 +3,11 @@
         <h1>
             <%= title %>
         </h1>
-        <h2>Available Service Projects</h2>
+
+        <div class="section-header">
+            <h2>Available Service Projects</h2>
+            <a href="/new-project" class="btn-primary">+ Add New Project</a>
+        </div>
 
         <div class="projects-grid">
             <% projects.forEach(project=> { %>
@@ -11,6 +15,7 @@
                     <% }); %>
         </div>
     </main>
-    <%- include('partials/footer') %>
+<%- include('partials/footer') %>
+
 
 

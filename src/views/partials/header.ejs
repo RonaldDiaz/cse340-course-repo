@@ -32,3 +32,17 @@
             </ul>
         </nav>
     </header>
+    <% const messages=flash(); %>
+        <% if (Object.keys(messages).length> 0) { %>
+            <div class="flash-messages">
+                <% Object.keys(messages).forEach(type=> { %>
+                    <% if (messages[type].length> 0) { %>
+                        <% messages[type].forEach(msg=> { %>
+                            <div class="alert alert-<%= type %>" role="alert">
+                                <%= msg %>
+                            </div>
+                        <% }); %>
+                    <% } %>
+                <% }); %>
+            </div>
+    <% } %>

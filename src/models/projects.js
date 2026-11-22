@@ -133,4 +133,49 @@ const getProjectsByCategoryId = async (categoryId) => {
     return projects;
 };
 
-export { getAllProjects, getProjectsByOrganizationId, getUpcomingProjects, getProjectDetails, getProjectsByCategoryId }
+const createProject = async (title, description, location, project_date, organizationId) => {
+    const query = `
+        INSERT INTO service_projects
+        (title, description, location, project_date, organization_id)
+        VALUES ($1, $2, $3, $4, $5)
+        RETURNING project_id;
+    `;
+
+    const queryParams = [title, description, location, project_date, organizationId];
+    const result = await db.query(query, queryParams);
+
+    if (result.rows.length === 0) {
+        throw new Error('Failed to create project');
+    }
+
+    if (process.env.ENABLE_SQL_LOGGING === 'true') {
+        console.log('Created new project with ID:', result.rows[0].project_id);
+    }
+
+    return result.rows[0].project_id;    
+}
+
+const updateProject = async (projectId, organizationId, title, description, location, project_date) => {
+  const query = `
+    UPDATE service_projects
+    SET title = $1, description = $2, contact_email = $3, logo_filename = $4
+    WHERE organization_id = $5
+    RETURNING organization_id;
+  `;
+
+  const queryParams = [name, description, contactEmail, logoFilename, organizationId];
+  const result = await db.query(query, queryParams);
+
+  if (result.rows.length === 0) {
+    throw new Error('Organization not found');
+  }
+
+  if (process.env.ENABLE_SQL_LOGGING === 'true') {
+    console.log('Updated organization with ID:', organizationId);
+  }
+
+  return result.rows[0].organization_id;
+}
+
+
+export { getAllProjects, getProjectsByOrganizationId, getUpcomingProjects, getProjectDetails, getProjectsByCategoryId, createProject }
