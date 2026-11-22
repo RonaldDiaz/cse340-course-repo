@@ -63,7 +63,9 @@
 
             <div class="detail-card-footer">
                 <a href="/projects" class="btn-secondary">Back to Projects</a>
-                <button type="button" class="btn-primary">Volunteer for this Project</button>
+                <a href="/edit-project/<%= projectDetails.project_id %>" class="btn-primary">
+                    Edit Project
+                </a>
             </div>
         </div>
     <% } else { %>
