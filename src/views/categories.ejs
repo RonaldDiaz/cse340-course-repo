@@ -3,11 +3,17 @@
         <h1>
             <%= title %>
         </h1>
+
+        <div class="section-header">
+            <h2>Available Categories</h2>
+            <a href="/new-category" class="btn-primary">+ Add New Category</a>
+        </div>
         <p>You can offer your help to assist in any of these categories:</p>
+
         <div class="categories-grid">
             <% categories.forEach(category=> { %>
                 <a href="/category/<%= category.category_id %>" class="category-card"
-                    style="background-image: url('/images/category-<%=category.category_id%>.jpg');">
+                    style="background-image: url('/images/category-<%= category.category_id %>.jpg'), url('/images/category-placeholder.jpg');">
                     <div class="category-overlay">
                         <h2>
                             <%= category.name %>

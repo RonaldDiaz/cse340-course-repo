@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+    <main>
+        <h1>
+            <%= title %>
+        </h1>
+        <p>Add a new service category to organize community projects.</p>
+
+        <form action="/new-category" method="POST" class="app-form">
+            <div class="form-group">
+                <label for="name">Category Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g., Health & Wellness" maxlength="100"
+                    required />
+            </div>
+
+            <div class="form-actions">
+                <a href="/categories" class="btn-secondary">&larr; Cancel</a>
+                <button type="submit" class="btn-primary">Create Category</button>
+            </div>
+        </form>
+    </main>
+    <%- include('partials/footer') %>

@@ -88,6 +88,7 @@ const showEditProjectForm = async (req, res) => {
 };
 
 const processEditProjectForm = async (req, res) => {
+    const projectId = req.params.id;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         // Loop through validation errors and flash them
@@ -98,7 +99,6 @@ const processEditProjectForm = async (req, res) => {
         // Redirect back to the new project form
         return res.redirect('/edit-project' + req.params.id);
     }
-    const projectId = req.params.id;
     const { organizationId, title, description, location, date } = req.body;
 
     await updateProject(

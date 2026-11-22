@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+    <main>
+        <h1>
+            <%= title %>
+        </h1>
+        <p>Update the name of this service category.</p>
+
+        <form action="/edit-category/<%= category.category_id %>" method="POST" class="app-form">
+            <div class="form-group">
+                <label for="name">Category Name</label>
+                <input type="text" id="name" name="name" value="<%= category.name %>" maxlength="100" required />
+            </div>
+
+            <div class="form-actions">
+                <a href="/category/<%= category.category_id %>" class="btn-secondary">&larr; Cancel</a>
+                <button type="submit" class="btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </main>
+    <%- include('partials/footer') %>

@@ -1,9 +1,14 @@
 <%- include('partials/header') %>
     <main>
         <% if (category) { %>
-            <h1>
-                <%= category.name %>
-            </h1>
+            <div class="section-header">
+                <h1>
+                    <%= category.name %>
+                </h1>
+                <a href="/edit-category/<%= category.category_id %>" class="btn-primary">
+                    &#9998; Edit Category
+                </a>
+            </div>
             <p>Service projects currently available under this category:</p>
 
             <% if (projects && projects.length> 0) { %>
