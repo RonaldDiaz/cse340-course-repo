@@ -6,7 +6,9 @@
 
         <div class="section-header">
             <h2>Available Service Projects</h2>
-            <a href="/new-project" class="btn-primary">+ Add New Project</a>
+            <% if (user && user.role_name==='admin' ) { %>
+                <a href="/new-project" class="btn-primary">+ Add New Project</a>
+            <% } %>
         </div>
 
         <div class="projects-grid">

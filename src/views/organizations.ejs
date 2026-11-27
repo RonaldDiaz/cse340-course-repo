@@ -6,7 +6,9 @@
 
         <div class="section-header">
             <h2>Our Partner Organizations</h2>
+            <% if (user && user.role_name==='admin' ) { %>
             <a href="/new-organization" class="btn-primary">+ Add New Organization</a>
+            <% } %>
         </div>
         <p>Explore the organizations sponsoring service projects across our community network:</p>
 

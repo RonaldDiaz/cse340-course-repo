@@ -28,10 +28,10 @@
                             </a>
                             <% }); %>
                                 <% } %>
-                
-                                    <a href="/assign-categories/<%= projectDetails.project_id %>" class="edit-categories-link">
-                                        &#9998; Edit Categories
-                                    </a>
+                                    <% if (user && user.role_name==='admin' ) { %>
+                                        <a href="/assign-categories/<%= projectDetails.project_id %>" class="edit-categories-link">&#9998; Edit Categories</a>
+                                    <% } %>
+                                    
                 </div>
                 <p class="project-description"><%= projectDetails.description %></p>
 
@@ -63,9 +63,12 @@
 
             <div class="detail-card-footer">
                 <a href="/projects" class="btn-secondary">Back to Projects</a>
-                <a href="/edit-project/<%= projectDetails.project_id %>" class="btn-primary">
-                    Edit Project
-                </a>
+                <% if (user && user.role_name==='admin' ) { %>
+                    <a href="/edit-project/<%= projectDetails.project_id %>" class="btn-primary">
+                        Edit Project
+                    </a>
+                <% } %>
+                
             </div>
         </div>
     <% } else { %>

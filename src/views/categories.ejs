@@ -6,7 +6,9 @@
 
         <div class="section-header">
             <h2>Available Categories</h2>
-            <a href="/new-category" class="btn-primary">+ Add New Category</a>
+            <% if (user && user.role_name==='admin' ) { %>
+                <a href="/new-category" class="btn-primary">+ Add New Category</a>
+            <% } %>
         </div>
         <p>You can offer your help to assist in any of these categories:</p>
 
