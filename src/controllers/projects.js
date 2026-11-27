@@ -97,7 +97,7 @@ const processEditProjectForm = async (req, res) => {
         });
 
         // Redirect back to the new project form
-        return res.redirect('/edit-project' + req.params.id);
+        return res.redirect('/edit-project/' + req.params.id);
     }
     const { organizationId, title, description, location, date } = req.body;
 
