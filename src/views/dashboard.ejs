@@ -1,16 +1,47 @@
 <%- include('partials/header') %>
-
     <main>
         <h1>
             <%= title %>
         </h1>
 
-        <h2>Dashboard</h2>
-        <p>Name: <%= name %>
-        </p>
-        <p>Username: <%= email %>
-        </p>
+            <% if (user) { %>
+                <div class="dashboard-profile-card">
+                    <div class="profile-info">
+                        <span class="role-badge <%= user.role_name === 'admin' ? 'role-admin' : 'role-user' %>">
+                            <%= user.role_name %>
+                        </span>
+                        <h2>Welcome back, <%= name %>!</h2>
+                        <p class="profile-email"><strong>Email:</strong>
+                            <%= user.email %>
+                        </p>
+                    </div>
+                </div>
+                <% if (user.role_name==='admin' ) { %>
+                    <section class="admin-panel">
+                        <h2>Administration Tools</h2>
+                        <p>You have administrator privileges. Use the options below to manage the platform:</p>
 
+                        <div class="admin-actions-grid">
+                            <a href="/users" class="admin-action-card">
+                                <span class="admin-icon">&#128101;</span>
+                                <div>
+                                    <h3>Manage Registered Users</h3>
+                                    <p>View all registered accounts, roles, and user details.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+                <% } %>
+                <section class="dashboard-quick-links">
+                    <h2>Quick Navigation</h2>
+                    <div class="quick-links-row">
+                        <a href="/projects" class="btn-primary">Browse Service Projects</a>
+                        <a href="/organizations" class="btn-secondary">View Partner Organizations</a>
+                    </div>
+                </section>
+            <% } else { %>
+                <p>You must be logged in to view this page.</p>
+                <a href="/login" class="btn-primary">Go to Login</a>
+            <% } %>
     </main>
-
     <%- include('partials/footer') %>

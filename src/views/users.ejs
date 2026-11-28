@@ -1,0 +1,53 @@
+<%- include('partials/header') %>
+    <main>
+        <div class="section-header">
+            <h1>
+                <%= title %>
+            </h1>
+            <a href="/dashboard" class="btn-secondary">&larr; Back to Dashboard</a>
+        </div>
+        <p>Complete list of registered accounts and their assigned system roles:</p>
+
+        <% if (users && users.length> 0) { %>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Registered Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% users.forEach(u=> { %>
+                            <tr>
+                                <td>#<%= u.user_id %>
+                                </td>
+                                <td><strong>
+                                        <%= u.name %>
+                                    </strong></td>
+                                <td><a href="mailto:<%= u.email %>" class="table-email">
+                                        <%= u.email %>
+                                    </a></td>
+                                <td>
+                                    <span
+                                        class="role-badge <%= u.role_name === 'admin' ? 'role-admin' : 'role-user' %>">
+                                        <%= u.role_name || 'user' %>
+                                    </span>
+                                </td>
+                                <td>
+                                    <%= u.created_at ? new Date(u.created_at).toLocaleDateString('en-US', {
+                                        year: 'numeric' , month: 'short' , day: 'numeric' }) : 'N/A' %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <% } else { %>
+                <p>No registered users found in the system.</p>
+                <% } %>
+    </main>
+    <%- include('partials/footer') %>

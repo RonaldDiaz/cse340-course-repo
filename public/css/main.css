@@ -1013,3 +1013,210 @@ footer {
     }
 }
 
+/* ==========================================
+   13. User Dashboard & Admin Panel
+   ========================================== */
+.dashboard-profile-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background-color: var(--bg-body);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    margin: 1.5rem 0 2rem 0;
+
+    .profile-info {
+        .role-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.65rem;
+            border-radius: 9999px;
+            margin-bottom: 0.5rem;
+
+            &.role-admin {
+                background-color: var(--accent-color);
+                color: var(--primary-color);
+            }
+
+            &.role-user {
+                background-color: var(--primary-light);
+                color: #ffffff;
+            }
+        }
+
+        h2 {
+            margin: 0 0 0.35rem 0;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .profile-email {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+    }
+}
+
+.admin-panel {
+    background-color: color-mix(in srgb, var(--accent-color) 8%, var(--bg-card));
+    border: 1px solid color-mix(in srgb, var(--accent-color) 45%, var(--border-color));
+    border-radius: var(--radius);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2rem;
+
+    h2 {
+        margin-top: 0;
+        color: var(--primary-color);
+    }
+
+    .admin-actions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+
+        .admin-action-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.15rem;
+            text-decoration: none;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                border-color: var(--primary-light);
+                box-shadow: var(--shadow-md);
+            }
+
+            .admin-icon {
+                font-size: 1.75rem;
+                background-color: var(--bg-body);
+                padding: 0.65rem;
+                border-radius: var(--radius);
+            }
+
+            h3 {
+                margin: 0 0 0.25rem 0;
+                font-size: 1.05rem;
+                color: var(--primary-color);
+            }
+
+            p {
+                margin: 0;
+                font-size: 0.85rem;
+                color: var(--text-muted);
+                line-height: 1.4;
+            }
+        }
+    }
+}
+
+.dashboard-quick-links {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+
+    .quick-links-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        margin-top: 1rem;
+    }
+}
+
+/* ==========================================
+   14. Users List
+   ========================================== */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: var(--bg-card);
+        text-align: left;
+        font-size: 0.95rem;
+
+        thead {
+            background-color: var(--primary-color);
+            color: #ffffff;
+
+            th {
+                padding: 0.95rem 1.25rem;
+                font-weight: 600;
+                font-size: 0.85rem;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                white-space: nowrap;
+            }
+        }
+
+        tbody {
+            tr {
+                border-bottom: 1px solid var(--border-color);
+                transition: background-color 0.15s ease;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:hover {
+                    background-color: var(--bg-body);
+                }
+
+                td {
+                    padding: 0.95rem 1.25rem;
+                    color: var(--text-main);
+                    vertical-align: middle;
+
+                    .table-email {
+                        color: var(--primary-light);
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .role-badge {
+                        display: inline-block;
+                        font-size: 0.72rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 0.05em;
+                        padding: 0.2rem 0.6rem;
+                        border-radius: 9999px;
+
+                        &.role-admin {
+                            background-color: var(--accent-color);
+                            color: var(--primary-color);
+                        }
+
+                        &.role-user {
+                            background-color: var(--primary-light);
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
